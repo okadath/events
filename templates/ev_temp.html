@@ -1,0 +1,37 @@
+{% if error_messages %}
+	<div class="notification is-danger">
+		<button class="delete"></button>
+		<strong>{{ error_messages }}</strong>
+	</div>
+{% endif %}
+
+<div class="columns is-mobile is-centered">
+	<div class="card column is-half ">
+		<div class="card-image ">
+			<figure class="image ">
+				<img src="/files/{{event.banner_1}}" alt="Placeholder image"  >
+			</figure>
+		</div>
+		<div class="card-content">
+			<div class="media">
+				<div class="media-content">
+					<p class="title is-4"><a href="/event/{{event.id}}">{{event.title}}</a></p> 
+				</div>
+			</div>
+aqui puedo desplegar info, solo descomenta ev_temp
+<!-- descomenta lo de abajo para mostrar a la info de cada evento  en esta plantilla-->
+<!-- 			<div class="content">
+				{{event.description}}
+				<br>country: <strong>{{event.country.name.name}}</strong>
+				<br>link_1: <a href="{{event.link_1}}">{{event.link_1}}</a>
+				<br>link_1_text: {{event.link_1_text}}
+				<br>use_banner_2: {{event.use_banner_1}} 
+				<br>link_2: <a href="{{event.link_2}}">{{event.link_2}}</a>
+				<br>link_2_text: {{event.link_2_text}}
+				<br>use_banner_1: {{event.use_banner_2}}  
+				<br>
+				<time>{{event.start_date}}</time>--<time>{{event.end_date}}</time>
+			</div> -->
+		</div>
+	</div>
+</div>

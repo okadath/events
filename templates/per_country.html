@@ -1,0 +1,40 @@
+{% extends './base.html' %}
+{% block content %}
+
+
+<!-- si en el context envie los paises solo muestra los paises con eventos, si no es 
+por que envio el id de un pais y el contexto tiene los eventos del pais dado
+ -->
+{% if error_messages %}
+	<div class="notification is-danger">
+		<button class="delete"></button>
+		<strong>{{ error_messages }}</strong>
+	</div>
+{% endif %}
+{% if countries  %}
+	{% for country in countries %}
+		<a href="countries/{{ country.id}}" class="button">{{ country.name.name }}</a>
+	{% endfor %} 
+{% else %}
+{{country}}
+<br>
+
+<div class="tile is-ancestor">
+	<div class="tile is-vertical ">
+		<div class="tile">
+			<div class="tile is-parent is-vertical">
+				{% for event in events %} 
+				<article class="tile is-child box ">
+					{% include './ev_temp.html' %} 
+				</article>
+				{% endfor %} 
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends './base.html' %}
+{% block content %}
+home
+<br>
+eventos mas cercanos a ocurrir desde la fecha {{time}}
+<br>
+<br>
+ 
+<div class="tile is-ancestor">
+	<div class="tile is-vertical ">
+		<div class="tile">
+			<div class="tile is-parent is-vertical">
+				{% for event in events %} 
+				<article class="tile is-child box ">
+					{% include './ev_temp.html' %} 
+				</article>
+				{% endfor %} 
+			</div>
+		</div>
+	</div>
+</div>
+ 
+{% endblock %}
+
